@@ -1,6 +1,7 @@
 # 370_CourseWork
 ## Student Information
 Student: Bradley Harrison
+
 SID: 7682427
 
 ## Feedback
