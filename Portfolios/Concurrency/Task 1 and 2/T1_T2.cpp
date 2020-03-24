@@ -11,7 +11,7 @@
 
 using namespace std;
 //GLOBAL VARIBLES
-mutex mtx;
+std::mutex mtx;
 int pos = 0;
 int prevPos = -1;
 vector<string> poem;
@@ -32,7 +32,7 @@ void readFile(string filename) {
 
 
 void increment(){
-    int poemSize = poem.size();
+    int poemSize = poem.size()-1;
     while(pos <= poemSize){
         if(prevPos == pos){
             mtx.lock();
@@ -45,17 +45,18 @@ void increment(){
 }
 
 void print(){
-    int poemSize = poem.size();
-    while (pos <= poemSize)
-        if(prevPos != pos){
+    int poemSize = poem.size()-1;
+    while(pos <= poemSize){
+        if(prevPos != pos && pos <= poemSize){
             mtx.lock();
             /* START OF CRITICAL SECTION */
             prevPos = pos;
             cout << poem[pos] << endl;
-            this_thread::sleep_for(std::chrono::milliseconds(1000));
+            this_thread::sleep_for(std::chrono::milliseconds(500));
             /* END OF CRITICAL SECTION */
             mtx.unlock();
         }
+    }
 }
 
 
