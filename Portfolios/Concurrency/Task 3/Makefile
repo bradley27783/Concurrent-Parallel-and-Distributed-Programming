@@ -1,22 +1,2 @@
-CC 	= g++ -std=c++0x -pthread
-CFLAGS 	= -Wall -O3
-LDFLAGS = 
-
-#----------
-
-EXE = base
-
-OBJS = $(patsubst %.cpp,%.o,$(wildcard *.cpp))
-
-#----------
-
-$(EXE): $(OBJS)
-	$(CC) $(OBJS) $(LIB_DIRS) $(LLIBS)$(LDFLAGS) -o $(EXE)
-
-$(OBJS): %.o : %.cpp
-	$(CC) $(CFLAGS) -c $<
-
-#----------
-
-clean:
-	rm -f *.o *.*~ *~  $(EXE) 
+compile:
+	g++ -std=c++0x T3.cpp -o base -lpthread
