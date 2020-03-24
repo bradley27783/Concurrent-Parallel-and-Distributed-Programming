@@ -12,7 +12,7 @@ SID: 7682427
 - [ ] Concurrency Assignment
 
 ### Feedback Acquired
-- [ ] Concurrency Portfolio
+- [x] Concurrency Portfolio
 - [ ] Parallel Portfolio
 - [ ] Distributed Portfolio
 - [ ] Concurrency Assignment
