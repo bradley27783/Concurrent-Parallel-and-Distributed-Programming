@@ -41,30 +41,41 @@ void getMemory(char* node){
 
 
 int main(int argc, char** argv) {
-  int coreSum = 0;
-
 
   // Initialize the MPI environment
   MPI_Init(NULL, NULL);
   char node_name[MPI_MAX_PROCESSOR_NAME];
-  int rank,size, namelen;
+int rank,size, namelen;
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
   MPI_Get_processor_name(node_name, &namelen);
   memset(node_name+namelen,0,MPI_MAX_PROCESSOR_NAME-namelen);
-
+  int headNode = 0;
+  
   int cores = getCpuCores();
   std::cout << node_name << " Core count:  " << cores << std::endl;
   getCpuClock(node_name);
   getMemory(node_name);
 
-  MPI_Reduce(&cores, &coreSum, 1, MPI_FLOAT, MPI_SUM, 0,MPI_COMM_WORLD);
-  
-if (rank ==0){
-  std::cout << "Total Cores Availible: " << coreSum << std::endl;
-  }
-  
+  int send_cores = cores;
+  int received_cores;
 
+  if (rank != 0) {   
+    MPI_Send(&send_cores, 1, MPI_INT, headNode, 0, MPI_COMM_WORLD);
+    std::cout << "> " <<node_name<<" Sent " << send_cores << "  To  node"<< headNode << std::endl;
+  }
+  MPI_Barrier(MPI_COMM_WORLD);
+  
+  if(rank == headNode){
+    int coreSum = cores;
+    for(int i = 1; i < size; i++){
+      MPI_Recv(&received_cores, 1, MPI_INT, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+      coreSum += received_cores;
+      std::cout << "> Number: " << received_cores << " Received by "<< node_name<< std::endl;
+    }
+    std::cout << "Core sum = " << coreSum << std::endl;
+  }
+
+  
   MPI_Finalize();
-  //std::cout << "Total Cores: " << totalCores << std::endl;
 }
