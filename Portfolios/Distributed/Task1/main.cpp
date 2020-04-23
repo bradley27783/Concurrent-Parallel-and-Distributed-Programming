@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
   // Initialize the MPI environment
   MPI_Init(NULL, NULL);
   char node_name[MPI_MAX_PROCESSOR_NAME];
-int rank,size, namelen;
+  int rank,size, namelen;
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
   MPI_Get_processor_name(node_name, &namelen);
@@ -71,9 +71,10 @@ int rank,size, namelen;
     for(int i = 1; i < size; i++){
       MPI_Recv(&received_cores, 1, MPI_INT, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
       coreSum += received_cores;
-      std::cout << "> Number: " << received_cores << " Received by "<< node_name<< std::endl;
+      std::cout << "> Number: " << received_cores << " Received from node"<< i << std::endl;
     }
     std::cout << "Core sum = " << coreSum << std::endl;
+    std::cout << "Amount of Nodes: " << size << std::endl;
   }
 
   
