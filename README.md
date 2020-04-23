@@ -7,13 +7,13 @@ SID: 7682427
 ## Feedback
 ### Ready to be checked
 - [x] Concurrency Portfolio
-- [ ] Parallel Portfolio
-- [ ] Distributed Portfolio
-- [ ] Concurrency Assignment
+- [x] Parallel Portfolio
+- [x] Distributed Portfolio
+- [x] Concurrency Assignment
 
 ### Feedback Acquired
 - [x] Concurrency Portfolio
-- [ ] Parallel Portfolio
-- [ ] Distributed Portfolio
+- [x] Parallel Portfolio
+- [x] Distributed Portfolio
 - [ ] Concurrency Assignment
 
