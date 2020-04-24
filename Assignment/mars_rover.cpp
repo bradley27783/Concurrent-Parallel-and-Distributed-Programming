@@ -16,7 +16,7 @@ using namespace std;
 mutex mtx;
 condition_variable condVar;
 int threadControlInt = 1;
-int solvedCount = 0;
+int problemCount = 0;
 const int MAX_WHEELS = 6;
 
 
@@ -48,9 +48,6 @@ void raiseWheel(int wheelID, vector<int> sequence){
     if(successful){
         cout << "Attempt successful" << endl << endl;
         logger("Attempt successful");
-        lck.lock();
-        solvedCount++;
-        lck.unlock();
     }
     else{
         cout << "Attempt unsuccessful" << endl;
@@ -79,9 +76,6 @@ void lowerWheel(int wheelID, vector<int> sequence){
     if(successful){
         cout << "Attempt successful" << endl << endl;
         logger("Attempt successful");
-        lck.lock();
-        solvedCount++;
-        lck.unlock();
     }else{
         cout << "Attempt unsuccessful" << endl;
         logger("Attempt unsuccessful");
@@ -110,9 +104,6 @@ void accelerate(int wheelID, vector<int> sequence){
     if(successful){
         cout << "Attempt successful" << endl << endl;
         logger("Attempt successful");
-        lck.lock();
-        solvedCount++;
-        lck.unlock();
 
     }else{
         cout << "Attempt unsuccessful" << endl;
@@ -142,9 +133,6 @@ void moveSlowly(int wheelID, vector<int> sequence){
     if(successful){
         cout << "Attempt successful" << endl << endl;
         logger("Attempt successful");
-        lck.lock();
-        solvedCount++;
-        lck.unlock();
     }else{
         cout << "Attempt unsuccessful" << endl;
         logger("Attempt unsuccessful");
@@ -172,9 +160,6 @@ void moveAround(int wheelID, vector<int> sequence){
     if(successful){
         cout << "Attempt successful" << endl << endl;
         logger("Attempt successful");
-        lck.lock();
-        solvedCount++;
-        lck.unlock();
     }else{
         cout << "Attempt unsuccessful" << endl;
         logger("Attempt unsuccessful");
@@ -203,9 +188,6 @@ void contactEarth(int wheelID, vector<int> sequence){
     if(successful){
         cout << "Attempt successful" << endl << endl;
         logger("Attempt successful");
-        lck.lock();
-        solvedCount++;
-        lck.unlock();
     }else{
         cout << "Attempt unsuccessful" << endl;
         cout << "Failed to find a solution" << endl << endl;
@@ -227,6 +209,7 @@ int wheelSensor(const int wheelID) {
         string str = "Wheel " + to_string(wheelID) + " has encountered an issue";
         cout << str << endl;
         logger(str);
+        problemCount++;
         return wheelID;
     }
     else{
@@ -346,7 +329,7 @@ void wheel(int wheelID){
 int main(void) {
     logger("");
     logger("--- STARTING A NEW LOG SESSION ---");
-    while(solvedCount < 5){ //Iterate until it has solved 10 problems
+    while(problemCount < 5){ //Iterate until it has solved 10 problems
         for(int i = 1; i <= MAX_WHEELS; i++){
             thread t(wheel,i); //Create 6 threaded wheels
             t.join();

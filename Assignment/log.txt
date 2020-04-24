@@ -1,41 +1,75 @@
 
 --- STARTING A NEW LOG SESSION ---
 Wheel 1 did not encounter an issue
-Wheel 2 has encountered an issue
-The problem encountered is 'sinking' 
-Attempting to move wheels slowly for the wheel 2
-Attempt unsuccessful
-Attempting to raise wheel 2
-Attempt successful
-Wheel 3 has encountered an issue
-The problem encountered is 'stuck' 
-Attempting to raise wheel 3
-Attempt successful
-Wheel 4 did not encounter an issue
-Wheel 5 has encountered an issue
-The problem encountered is 'drops' 
-Attempting to raise wheel 5
-Attempt unsuccessful
-Attempting to move around obstacle for the wheel 5
-Attempt unsuccessful
-Attempting to move wheels slowly for the wheel 5
-Attempt successful
-Wheel 6 did not encounter an issue
-Wheel 1 has encountered an issue
-The problem encountered is 'free wheeling' 
-Attempting to raise wheel 1
-Attempt successful
 Wheel 2 did not encounter an issue
 Wheel 3 did not encounter an issue
 Wheel 4 did not encounter an issue
 Wheel 5 did not encounter an issue
 Wheel 6 did not encounter an issue
 Wheel 1 did not encounter an issue
-Wheel 2 has encountered an issue
-The problem encountered is 'large bump' 
-Attempting to raise wheel 2
-Attempt successful
+Wheel 2 did not encounter an issue
 Wheel 3 did not encounter an issue
 Wheel 4 did not encounter an issue
 Wheel 5 did not encounter an issue
 Wheel 6 did not encounter an issue
+Wheel 1 has encountered an issue
+The problem encountered is 'sinking' 
+Attempting to move wheels slowly for the wheel 1
+Attempt successful
+Wheel 2 did not encounter an issue
+Wheel 3 did not encounter an issue
+Wheel 4 has encountered an issue
+The problem encountered is 'drops' 
+Attempting to raise wheel 4
+Attempt unsuccessful
+Attempting to move around obstacle for the wheel 4
+Attempt successful
+Wheel 5 did not encounter an issue
+Wheel 6 did not encounter an issue
+Wheel 1 has encountered an issue
+The problem encountered is 'free wheeling' 
+Attempting to raise wheel 1
+Attempt unsuccessful
+Attempting to lower wheel 1
+Attempt unsuccessful
+Attempting to accelerate wheels for 1
+Attempt unsuccessful
+Attempting to contact earth 1
+Attempt unsuccessful
+Failed to find a solution
+Wheel 2 did not encounter an issue
+Wheel 3 did not encounter an issue
+Wheel 4 did not encounter an issue
+Wheel 5 did not encounter an issue
+Wheel 6 did not encounter an issue
+Wheel 1 has encountered an issue
+The problem encountered is 'drops' 
+Attempting to raise wheel 1
+Attempt successful
+Wheel 2 has encountered an issue
+The problem encountered is 'free wheeling' 
+Attempting to raise wheel 2
+Attempt unsuccessful
+Attempting to lower wheel 2
+Attempt successful
+Wheel 3 did not encounter an issue
+Wheel 4 did not encounter an issue
+Wheel 5 has encountered an issue
+The problem encountered is 'stuck' 
+Attempting to raise wheel 5
+Attempt unsuccessful
+Attempting to lower wheel 5
+Attempt unsuccessful
+Attempting to accelerate wheels for 5
+Attempt successful
+Wheel 6 has encountered an issue
+The problem encountered is 'drops' 
+Attempting to raise wheel 6
+Attempt unsuccessful
+Attempting to move around obstacle for the wheel 6
+Attempt unsuccessful
+Attempting to move wheels slowly for the wheel 6
+Attempt unsuccessful
+Attempting to contact earth 6
+Attempt unsuccessful
+Failed to find a solution
